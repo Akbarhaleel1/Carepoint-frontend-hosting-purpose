@@ -27,7 +27,7 @@ interface Doctor {
   alternativePhoneNumber: string;
   bio: string;
   certificationDetails: string;
-  consultationTypes: string[]; // Array for multiple consultation types
+  consultationTypes: string[];
   createdAt: string;
   isBlocked: boolean;
   isVerified: boolean;
