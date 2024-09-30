@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React from 'react';
 import { useRouter } from 'next/navigation';
 import { Camera, X } from 'lucide-react';
@@ -8,7 +8,9 @@ export const NotificationModal = ({ isOpen, onClose, doctorName }: any) => {
 
   if (!isOpen) return null;
 
-
+  const handleAcceptCall = () => {
+    router.push('/user/Appointments/camara'); // Adjust this path as needed
+  };
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 flex justify-center items-center z-50">
@@ -27,17 +29,17 @@ export const NotificationModal = ({ isOpen, onClose, doctorName }: any) => {
             <Camera size={64} className="text-blue-500" />
           </div>
           <p className="text-center text-lg mb-6">
-            Doctor is requesting a video call
+            {doctorName} is requesting a video call
           </p>
           <div className="flex justify-center space-x-4">
-            <a href="http://localhost:3000/user/Appointments/camara">
             <button 
+              onClick={handleAcceptCall}
               className="bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
             >
               Accept
             </button>
-            </a>
-            {/* <button 
+            {/* Uncomment to enable Decline button
+            <button 
               onClick={onClose}
               className="bg-red-500 hover:bg-red-600 text-white font-bold py-2 px-6 rounded-full transition duration-300 ease-in-out transform hover:scale-105"
             >
