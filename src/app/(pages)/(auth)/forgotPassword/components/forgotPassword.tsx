@@ -1,30 +1,29 @@
-// pages/forgot-password.js
-'use client'
+"use client";
 
-import { useState, FormEvent } from 'react';
-import { useRouter } from 'next/navigation';
-import Head from 'next/head';
-import { motion } from 'framer-motion';
-import axiosInstance from '@/app/hooks/useApi';
+import { useState, FormEvent } from "react";
+import { useRouter } from "next/navigation";
+import Head from "next/head";
+import { motion } from "framer-motion";
+import axiosInstance from "@/app/hooks/useApi";
 
 export default function ForgotPassword() {
-  const [email, setEmail] = useState<string>('');
-  const [message, setMessage] = useState<string>('');
+  const [email, setEmail] = useState<string>("");
+  const [message, setMessage] = useState<string>("");
   const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     try {
-      const response = await axiosInstance.post('/forgot-password', { email });
+      const response = await axiosInstance.post("/forgot-password", { email });
 
       if (response.status === 200) {
-        
-        setMessage(`If an account exists for ${email}, you will receive a password reset link shortly.`);
+        setMessage(
+          `If an account exists for ${email}, you will receive a password reset link shortly.`
+        );
         const url = `/forgotPassword/otp?email=${encodeURIComponent(email)}`;
 
-        setTimeout(() => router.push(url), 3000); // Redirect after 3 seconds
-        
+        setTimeout(() => router.push(url), 3000);
       } else {
         console.log("Failed to send reset link");
         setMessage("Something went wrong. Please try again.");
@@ -42,14 +41,14 @@ export default function ForgotPassword() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <motion.div 
+      <motion.div
         initial={{ opacity: 0, y: -50 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5 }}
         className="max-w-md w-full space-y-8 bg-white bg-opacity-10 p-10 rounded-2xl shadow-2xl backdrop-filter backdrop-blur-lg"
       >
         <div>
-          <motion.h2 
+          <motion.h2
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.5 }}
@@ -57,13 +56,13 @@ export default function ForgotPassword() {
           >
             Forgot your password?
           </motion.h2>
-          <motion.p 
+          <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.4, duration: 0.5 }}
             className="mt-2 text-center text-sm text-gray-200"
           >
-            No worries, we'll send you reset instructions.
+            `No worries, we'll send you reset instructions.`
           </motion.p>
         </div>
         <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
@@ -82,7 +81,9 @@ export default function ForgotPassword() {
                 className="appearance-none rounded-lg relative block w-full px-3 py-3 border border-gray-300 placeholder-gray-500 text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 focus:z-10 sm:text-sm transition-all duration-300 ease-in-out"
                 placeholder="Enter your email address"
                 value={email}
-                onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
+                onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                  setEmail(e.target.value)
+                }
               />
             </div>
           </div>
@@ -99,7 +100,7 @@ export default function ForgotPassword() {
           </div>
         </form>
         {message && (
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="mt-4 text-center text-sm text-white bg-green-500 bg-opacity-25 p-3 rounded-lg"

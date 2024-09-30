@@ -208,7 +208,7 @@ const Home = () => {
         </div>
         <div className="flex items-center">
           <h1 className="text-[26px] font-bold text-white">
-            Doctor’s Apponmenets
+            `Doctor’s Apponmenets`
           </h1>
           {/* <span className="text-4xl font-bold text-white ml-10">+</span> */}
         </div>
@@ -220,7 +220,7 @@ const Home = () => {
       >
         <div className="text-white lg:absolute lg:top-32 lg:max-w-[50%]">
           <h2 className="font-bold text-3xl sm:text-4xl lg:text-[40px] leading-tight">
-            Doctor's appointment
+       `Doctor's appointment`
           </h2>
           <h2 className="font-thin text-xl sm:text-2xl lg:text-[25px] mt-2">
             Effortless Scheduling for Seamless Care
@@ -228,12 +228,12 @@ const Home = () => {
           <div className="mt-6 lg:mt-10 space-y-6 lg:space-y-10">
             <p>
               <span className="font-sans font-bold">Easy Booking:</span>{" "}
-              Schedule, reschedule, or cancel appointments with just a few
-              clicks.
+            `Schedule, reschedule, or cancel appointments with just a few
+              clicks.`
             </p>
             <p>
               <span className="font-sans font-bold">
-                Real-Time Availability:{" "}
+             `Real-Time Availability:`{" "}
               </span>{" "}
               View doctor availability and choose your preferred time slot.
             </p>
@@ -284,14 +284,14 @@ const Home = () => {
           <div className="mt-6 lg:mt-10 space-y-6 lg:space-y-10">
             <p>
               <span className="font-sans font-bold">Easy Ordering:</span>{" "}
-              Browse, select, and purchase medicines with just a few clicks.
+     `Browse, select, and purchase medicines with just a few clicks.`
             </p>
             <p>
               <span className="font-sans font-bold">
                 Real-Time Stock Updates:
               </span>{" "}
-              See available stock in real-time and choose from a wide range of
-              medicines.
+             `See available stock in real-time and choose from a wide range of
+              medicines.`
             </p>
             <p>
               <span className="font-sans font-bold">Fast Delivery:</span>{" "}
@@ -300,14 +300,14 @@ const Home = () => {
             </p>
             <p>
               <span className="font-sans font-bold">
-                Prescription Management:
+            `Prescription Management:`
               </span>{" "}
               Upload prescriptions and reorder your medications with ease.
             </p>
             <p>
-              <span className="font-sans font-bold">Secure Payment:</span>{" "}
-              Hassle-free and safe payment options for a smooth shopping
-              experience.
+              <span className="font-sans font-bold">`Secure Payment:`</span>{" "}
+              `Hassle-free and safe payment options for a smooth shopping
+              experience.`
             </p>
           </div>
         </div>
@@ -371,10 +371,10 @@ const Home = () => {
             About Us
           </h2>
           <p className="text-black font-serif text-base lg:absolute lg:top-20 lg:left-[10px] max-w-md lg:max-w-none">
-            At CarePoint, our goal is to transform emergency healthcare with
+            `At CarePoint, our goal is to transform emergency healthcare with
             cutting-edge technology. We connect patients, doctors, hospitals,
             and ambulance drivers to deliver fast and efficient care when it's
-            needed most.
+            needed most.`
           </p>
         </div>
         <div className="mt-8 lg:mt-0 lg:absolute lg:top-[134px] lg:right-56 lg:transform lg:-translate-y-1/2 lg:m-10 lg:p-[150px] lg:px-[220px]">
